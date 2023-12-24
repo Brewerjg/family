@@ -20,8 +20,6 @@ const Navbar = () => {
             <Link to="/">
                 <button > Home</button>
             </Link>
-            <a className="text-decoration-none" href="/image/new"><button > Add Photos
-            </button></a>
             
         </div>
         <div className="head-div h-screen">

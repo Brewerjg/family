@@ -3,6 +3,7 @@ import axios from 'axios';
 import {Link} from 'react-router-dom'
 import { useEffect, useState } from "react"
 import { useMemo } from "react"
+import Create from './create'
 
 
 const DisplayImg = () => {
@@ -42,6 +43,7 @@ const DisplayImg = () => {
 
   return (
     <div>
+      <Create/>
         <div className='w-full flex justify-center'>
           <label for="title" className='text-red-700 text-4xl m-2'>Choose a name:</label>
                     <select name="title" id="title" onChange={handleNameChange}>
@@ -52,13 +54,13 @@ const DisplayImg = () => {
                     <option value="Hooks">Hooks</option>
                     </select>
           </div>
-        <div className=" my-8 grid 2xl:grid-cols-3 xl:grid-cols-3 sm:grid-cols-2 md:grid-cols-2 justify-center gap-8 p-6">
+        <div className="masonry">
             
             {filteredList.map((image, index)=>{
                     return (
-            <div className='bg-transparent rounded-3xl p-2' key={index}>  
+            <div className='item' key={index}>  
                 <Link to={"/image/" + image._id}>
-                <img src={image.image} alt=" random imgee" className="w-full object-cover object-center rounded-3xl bg-slate-600 shadow-md"/>
+                <img src={image.image} alt=" random imgee" className="h-auto max-w-full rounded-lg"/>
                 </Link>
             </div>
             )})
