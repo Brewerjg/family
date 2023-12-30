@@ -22,6 +22,7 @@ export default function Create () {
       const createImg = async (image) => {
         try {
           await createImage(image);
+          return alert("Image Added");
           
         } catch (setError) {
           console.log(error.message);
@@ -47,7 +48,7 @@ export default function Create () {
         <form onSubmit={handleSubmit}>
         
           <div>
-          <label className='text-white-900' for="name">Choose a name:</label>
+          <label className='text-white-900' for="title">Choose a name:</label>
                     <select className='rounded-xl' name="title" id="title" onChange={e => setImage({ ...image, title: e.target.value })} path={image.title}>
                       <option  value="">--Please choose an option--</option>
                       <option value="Grammer">Grammer</option>
