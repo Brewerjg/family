@@ -11,7 +11,7 @@ function App() {
     <div>
       <BrowserRouter>
             <Routes>
-                <Route element={<Main/>} path="/home" default/>  
+                <Route element={<Main/>} path="/" default/>  
                 <Route element={<Detail/>} path="/image/:id"/> 
             </Routes>
     	</BrowserRouter>
