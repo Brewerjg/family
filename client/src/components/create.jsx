@@ -36,7 +36,7 @@ export default function Create () {
           
         }
         createImg(image);
-        navigate('/');
+        
       };
   
     return (
