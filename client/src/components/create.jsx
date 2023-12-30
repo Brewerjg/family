@@ -55,14 +55,14 @@ export default function Create () {
     //   };
   
     return (
-    <div className='flex justify-center'>
+    <div className='flex justify-center mt-32'>
       <div className='flex flex-col bg-gray-600 rounded-2xl m-10 h-1/3 w-1/3 p-5 ' >
         <div className='flex justify-center'>
           <h1 className='text-5xl text-red-900 m-4'>Add Image</h1>
         </div>
         <form onSubmit={handleSubmit}>
         
-          <div>
+          <div className='flex flex-col justify-start'>
             <label className='text-white-900' for="title">Choose a name:</label>
               <select className='w-2/3 rounded-xl' name="title" id="title" onChange={e => setImage({ ...image, title: e.target.value })} path={image.title}>
                 <option  value="">--Please choose an option--</option>
@@ -71,7 +71,7 @@ export default function Create () {
                 <option value="Hooks">Hooks</option>
               </select>
           </div>
-          <div className="form-group m-2">
+          <div className="form-group my-2">
             <label path="imageBody">Description:</label>
             <input required="" className="form-control" onChange={e => setImage({ ...image, imageBody: e.target.value })} path={image.imageBody} name="imageBody" id="imageBody" type="text"/>
           </div>

@@ -9,17 +9,6 @@ const Navbar2 = () => {
             <Link to="/">
                 <button > Home</button>
             </Link>
-            <Link to="/grammer">
-                <button >Grammer</button>
-            </Link>
-            <Link to="/bhakta">
-                <button >Bhakta</button>
-            </Link>
-            <Link to="/hooks">
-                <button >Hooks</button>
-            </Link>
-            <a className="text-decoration-none" href="/image/new"><button > Add Photos
-            </button></a>
         </div>
 	<video className="video-bg" src={BgVideo} autoPlay loop muted></video>
     </div>
