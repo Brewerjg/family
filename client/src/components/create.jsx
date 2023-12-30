@@ -13,7 +13,7 @@ export default function Create () {
     });
     const error = useState("");
 
-    const navigate = useNavigate();
+    
 
 
     const url = "http://localhost:8000/api/image/new";
@@ -49,7 +49,7 @@ export default function Create () {
         
           <div>
           <label className='text-white-900' for="title">Choose a name:</label>
-                    <select className='rounded-xl' name="title" id="title" onChange={e => setImage({ ...image, title: e.target.value })} path={image.title}>
+                    <select className='w-2/3 rounded-xl' name="title" id="title" onChange={e => setImage({ ...image, title: e.target.value })} path={image.title}>
                       <option  value="">--Please choose an option--</option>
                       <option value="Grammer">Grammer</option>
                       <option value="Bhakta">Bhakta</option>

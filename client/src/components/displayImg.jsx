@@ -47,7 +47,7 @@ const DisplayImg = () => {
       <Carousel/>
         <div className='w-full flex justify-center my-2'>
           <label for="title" className='text-red-700 text-4xl m-2'>Choose a name:</label>
-                    <select name="title" id="title" onChange={handleNameChange}>
+                    <select className=' rounded-2xl' name="title" id="title" onChange={handleNameChange}>
                     <option  value="">Select a Name</option>
                     <option  value="">All</option>
                     <option value="Grammer">Grammer</option>
