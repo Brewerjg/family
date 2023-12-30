@@ -12,10 +12,8 @@ export default function Create () {
         image: "",
     });
     const error = useState("");
-
+    const navigate = useNavigate();
     
-
-
     const url = "http://localhost:8000/api/image/new";
     const createImage = (newImage) => axios.post(url, newImage);
     
@@ -36,7 +34,7 @@ export default function Create () {
           
         }
         createImg(image);
-        
+        navigate("/");
       };
   
     return (
