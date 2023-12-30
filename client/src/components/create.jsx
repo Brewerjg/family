@@ -11,17 +11,20 @@ export default function Create () {
         imageBody: "",
         image: "",
     });
-    const error = useState("");
+    const [error, setError] = useState("");
     const navigate = useNavigate();
     
     const handleSubmit = () => {
       axios.post('http://localhost:8000/api/image/new', image)
               .then(res=>{
-                  console.log(res.data);
+                console.log("New Image Added")
+                console.log(res.data);
                   navigate('/');
               })
               .catch((err) => {
-                  console.log(err)
+                setError(err.response.data.message);
+                console.log(error)
+                console.log(err)
                   navigate('/')
           });
       }
