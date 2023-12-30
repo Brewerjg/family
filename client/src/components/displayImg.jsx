@@ -3,8 +3,7 @@ import axios from 'axios';
 import {Link} from 'react-router-dom'
 import { useEffect, useState } from "react"
 import { useMemo } from "react"
-import Create from './create'
-import Carousel from './EmblaCarousel'
+
 
 
 
@@ -43,8 +42,6 @@ const DisplayImg = () => {
 
   return (
     <div>
-      <Create/>
-      <Carousel/>
         <div className='w-full flex justify-center my-2'>
           <label for="title" className='text-red-700 text-4xl m-2'>Choose a name:</label>
                     <select className=' rounded-2xl' name="title" id="title" onChange={handleNameChange}>
