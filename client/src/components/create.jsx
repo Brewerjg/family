@@ -14,28 +14,42 @@ export default function Create () {
     const error = useState("");
     const navigate = useNavigate();
     
-    const url = "http://localhost:8000/api/image/new";
-    const createImage = (newImage) => axios.post(url, newImage);
-    
-      const createImg = async (image) => {
-        try {
-          await createImage(image);
-          return alert("Image Added");
-          
-        } catch (setError) {
-          console.log(error.message);
-          return alert("Invalid Form, Please Try Again");
-        }
-      };
+    const handleSubmit = () => {
+      axios.post('http://localhost:8000/api/image/new', image)
+              .then(res=>{
+                  console.log(res.data);
+                  navigate('/');
+              })
+              .catch((err) => {
+                  console.log(err)
+                  navigate('/')
+          });
+      }
 
-      const handleSubmit = () => {
-        if (image.image === "" || image.image === null) {
-          return alert("Please Upload an Image");
+
+
+    // const url = "http://localhost:8000/api/image/new";
+    // const createImage = (image) => axios.post(url, image);
+    
+    //   const createImg = async (image) => {
+    //     try {
+    //       await createImage(image);
+    //       return alert("Image Added");
           
-        }
-        createImg(image);
-        navigate("/");
-      };
+    //     } catch (setError) {
+    //       console.log(error.message);
+    //       return alert("Invalid Form, Please Try Again");
+    //     }
+    //   };
+
+    //   const handleSubmit = () => {
+    //     if (image.image === "" || image.image === null) {
+    //       return alert("Please Upload an Image");
+          
+    //     }
+    //     createImg(image);
+    //     navigate("/");
+    //   };
   
     return (
     <div className='flex justify-center'>
