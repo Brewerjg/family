@@ -3,6 +3,7 @@ import Navbar from '../components/navbar';
 import DisplayImg from '../components/displayImg';
 import { useState } from 'react';
 
+
 const Home = () => {
     const [image, setImage] = useState([]);
     const removeDom = imageId => {

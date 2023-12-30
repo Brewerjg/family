@@ -39,7 +39,7 @@ export default function Create () {
       };
   
     return (
-    <div className='flex justify-center h-screen'>
+    <div className='flex justify-center'>
       <div className='flex flex-col bg-gray-600 rounded-2xl m-10 h-1/3 w-1/3 p-5 ' >
         <div className='flex justify-center'>
           <h1 className='text-5xl text-red-900 m-4'>Add Image</h1>
@@ -48,11 +48,11 @@ export default function Create () {
         
           <div>
           <label className='text-white-900' for="name">Choose a name:</label>
-                    <select name="title" id="title" onChange={e => setImage({ ...image, title: e.target.value })} path={image.title}>
-                    <option  value="">--Please choose an option--</option>
-                    <option value="Grammer">Grammer</option>
-                    <option value="Bhakta">Bhakta</option>
-                    <option value="Hooks">Hooks</option>
+                    <select className='rounded-xl' name="title" id="title" onChange={e => setImage({ ...image, title: e.target.value })} path={image.title}>
+                      <option  value="">--Please choose an option--</option>
+                      <option value="Grammer">Grammer</option>
+                      <option value="Bhakta">Bhakta</option>
+                      <option value="Hooks">Hooks</option>
                     </select>
           </div>
           <div className="form-group m-2">

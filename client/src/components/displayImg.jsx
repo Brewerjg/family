@@ -4,13 +4,16 @@ import {Link} from 'react-router-dom'
 import { useEffect, useState } from "react"
 import { useMemo } from "react"
 import Create from './create'
+import Carousel from './EmblaCarousel'
+
+
 
 
 const DisplayImg = () => {
-
-
     const [image, setImage] = useState([]);
     const [filteredImages, setFilteredImages] = useState([]);
+    
+    
 
     useEffect(()=>{
     	axios.get("http://localhost:8000/api/image")
@@ -23,8 +26,6 @@ const DisplayImg = () => {
     	})
     }, [])
 
-
-
     function getFilteredList() {
         // Avoid filter when selectedCategory is null
         if (!filteredImages) {
@@ -32,19 +33,19 @@ const DisplayImg = () => {
         }
         return image.filter((image) => image.title === filteredImages);
       }
-   
       // Avoid duplicate function calls with useMemo
       var filteredList = useMemo(getFilteredList, [filteredImages, image]);
     
       function handleNameChange(e) {
         setFilteredImages(e.target.value);
       }
-
+      
 
   return (
     <div>
       <Create/>
-        <div className='w-full flex justify-center'>
+      <Carousel/>
+        <div className='w-full flex justify-center my-2'>
           <label for="title" className='text-red-700 text-4xl m-2'>Choose a name:</label>
                     <select name="title" id="title" onChange={handleNameChange}>
                     <option  value="">Select a Name</option>
@@ -53,9 +54,8 @@ const DisplayImg = () => {
                     <option value="Bhakta">Bhakta</option>
                     <option value="Hooks">Hooks</option>
                     </select>
-          </div>
-        <div className="masonry">
-            
+        </div>
+        <div className="masonry mb-10">
             {filteredList.map((image, index)=>{
                     return (
             <div className='item' key={index}>  
