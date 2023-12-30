@@ -56,7 +56,7 @@ export default function Create () {
           </div>
           <div className="form-group m-2">
             <label path="imageBody">Description:</label>
-            <input required="" className="form-control" onChange={e => setImage({ ...image, imageBody: e.target.value })} path={image.imageBody} name="imageBody" id="imageBody" type="text"/>
+              <input required="" className="form-control" onChange={e => setImage({ ...image, imageBody: e.target.value })} path={image.imageBody} name="imageBody" id="imageBody" type="text"/>
           </div>
           <FileBase64 
           type="file"
