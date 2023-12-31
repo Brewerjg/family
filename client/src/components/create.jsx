@@ -41,9 +41,9 @@ export default function Create () {
   
     return (
     <div className='flex justify-center mt-32'>
-      <div className='flex flex-col bg-gray-600 rounded-2xl m-10 h-1/3 w-1/3 p-5 ' >
+      <div className='flex flex-col bg-gray-400 rounded-2xl m-10 h-1/3 w-full md:w-1/3 p-5 ' >
         <div className='flex justify-center'>
-          <h1 className='text-5xl text-red-900 m-4'>Add Image</h1>
+          <h1 className='text-5xl text-black m-4'>Add Image</h1>
         </div>
         <form onSubmit={handleSubmit}>
         
@@ -57,7 +57,7 @@ export default function Create () {
               </select>
           </div>
           <div className="form-group my-2">
-            <label path="imageBody">Description:</label>
+            <label path="imageBody">Description: optional</label>
             <input required="" className="form-control" onChange={e => setImage({ ...image, imageBody: e.target.value })} path={image.imageBody} name="imageBody" id="imageBody" type="text"/>
           </div>
           <FileBase64 

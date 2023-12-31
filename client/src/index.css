@@ -40,7 +40,7 @@ code {
 }
 
 .head-name {
-  font-size: 7rem;
+  
   text-transform: uppercase;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   line-height: 5.9rem;
@@ -81,7 +81,7 @@ code {
   border: none;
   border-radius: 0.4em;
   text-transform: uppercase;
-  font-size: 19px;
+
   font-family: "Work Sans", sans-serif;
   font-weight: 500;
   letter-spacing: 0.04em;
