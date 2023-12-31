@@ -14,45 +14,45 @@ export default function Create () {
     const [error, setError] = useState("");
     const navigate = useNavigate();
     
-    const handleSubmit = () => {
-      axios.post('http://localhost:8000/api/image/new', image)
-              .then(res=>{
-                console.log("New Image Added")
-                console.log(res.data);
-                  navigate('/');
-              })
-              .catch((err) => {
-                setError(err.response.data.message);
-                console.log(error)
-                console.log(err)
-                  navigate('/')
-          });
-      }
+    // const createImage = (image) => {
+    //   axios.post('http://localhost:8000/api/image/new', image)
+    //           .then(res=>{
+    //             console.log("New Image Added")
+    //             console.log(res.data);
+    //               navigate('/');
+    //           })
+    //           .catch((err) => {
+    //             setError(err.response.data.message);
+    //             console.log(error)
+    //             console.log(err)
+    //               navigate('/')
+    //       });
+    //   }
 
 
 
-    // const url = "http://localhost:8000/api/image/new";
-    // const createImage = (image) => axios.post(url, image);
+    const url = "http://localhost:8000/api/image/new";
+    const createImage = (newImage) => axios.post(url, newImage);
     
-    //   const createImg = async (image) => {
-    //     try {
-    //       await createImage(image);
-    //       return alert("Image Added");
+      const createImg = async (image) => {
+        try {
+          await createImage(image);
+          return alert("Image Added");
           
-    //     } catch (setError) {
-    //       console.log(error.message);
-    //       return alert("Invalid Form, Please Try Again");
-    //     }
-    //   };
+        } catch (setError) {
+          console.log(error.message);
+          return alert("Invalid Form, Please Try Again");
+        }
+      };
 
-    //   const handleSubmit = () => {
-    //     if (image.image === "" || image.image === null) {
-    //       return alert("Please Upload an Image");
+      const handleSubmit = () => {
+        if (image.image === "" || image.image === null) {
+          return alert("Please Upload an Image");
           
-    //     }
-    //     createImg(image);
-    //     navigate("/");
-    //   };
+        }
+        createImg(image);
+        navigate("/");
+      };
   
     return (
     <div className='flex justify-center mt-32'>

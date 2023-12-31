@@ -4,7 +4,7 @@ module.exports ={
     // create
     createImage: (req, res) => {
         image.create(req.body)
-            .then(image => res.json(image))
+            .then(newImage => res.json(newImage))
             .catch((err => res.status(400).json(err)));
                 },
     // read
