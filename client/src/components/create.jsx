@@ -12,22 +12,7 @@ export default function Create () {
         image: "",
     });
     const [error, setError] = useState("");
-    const navigate = useNavigate();
-    
-    // const createImage = (image) => {
-    //   axios.post('http://localhost:8000/api/image/new', image)
-    //           .then(res=>{
-    //             console.log("New Image Added")
-    //             console.log(res.data);
-    //               navigate('/');
-    //           })
-    //           .catch((err) => {
-    //             setError(err.response.data.message);
-    //             console.log(error)
-    //             console.log(err)
-    //               navigate('/')
-    //       });
-    //   }
+    // const navigate = useNavigate();
 
 
 
@@ -51,7 +36,7 @@ export default function Create () {
           
         }
         createImg(image);
-        navigate("/");
+        
       };
   
     return (
