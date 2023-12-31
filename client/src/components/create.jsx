@@ -12,7 +12,7 @@ export default function Create () {
         image: "",
     });
     const [error, setError] = useState("");
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
 
 
@@ -36,7 +36,7 @@ export default function Create () {
           
         }
         createImg(image);
-        
+        navigate("/new");
       };
   
     return (
