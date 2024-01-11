@@ -1,5 +1,7 @@
-
+const UserController = require('../controllers/user.controllers');
 const ImageController = require('../controllers/image.controllers'); 
+const { authenticate } = require('../config/jwt.config');
+
 
 module.exports = (app) => {
     app.get('/api/image', ImageController.AllImage);
@@ -7,4 +9,8 @@ module.exports = (app) => {
     app.get('/api/oneimage/:id', ImageController.getOneImage);
     app.patch('/api/image/:id', ImageController.updateImage);
     app.delete('/api/delete/:id', ImageController.deleteImage);
+    app.post('/api/register', UserController.register);
+    app.post('/api/login', UserController.login);
+    app.get('/api/users', authenticate, UserController.getAll);
+    app.post('/api/logout', authenticate, UserController.logout);
 }

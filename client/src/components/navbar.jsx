@@ -1,18 +1,34 @@
 import React from 'react'
 import BgVideo from '../assets/film-effect-cut.mp4'
-import { Link } from 'react-router-dom'
-import { useLayoutEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useLayoutEffect} from 'react'
 import SplitType from 'split-type'
 import gsap from 'gsap'
+import axios from 'axios'
+
+
 
  
 const Navbar = () => {
+
 
     useLayoutEffect(() => {
         var myText = new SplitType ('.my-text');
         gsap.to(myText.chars, {duration: 1, y: 0, stagger: 0.04, delay: .5,
             duration: .1, ease: 'power2.inOut'});
         }, [])
+    
+    const navigate = useNavigate()
+    const handleClick = () => {
+        axios.post('http://localhost:8000/api/logout', {}, {withCredentials: true})
+            .then(res => {
+                console.log(res.data)
+                navigate('/')
+            })
+            .catch(err => console.log(err))
+    }
+
+
 
   return (
     <div className="navbar">
@@ -23,6 +39,7 @@ const Navbar = () => {
             <Link to="/new">
                 <button >Add Photo</button>
             </Link>
+            <button onClick={handleClick} >Logout</button>
         </div>
         <div className="head-div h-screen">
 		    <h1 className='head-name my-text font-["Elsie"] text-3xl xl:text-8xl lg:text-8xl md:text-5xl sm:text-3xl '>Grammer | Bhakta</h1>
