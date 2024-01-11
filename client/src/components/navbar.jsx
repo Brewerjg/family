@@ -5,12 +5,14 @@ import { useLayoutEffect} from 'react'
 import SplitType from 'split-type'
 import gsap from 'gsap'
 import axios from 'axios'
+import { useContext } from 'react'
+import UserContext from '../utils/userContext'
 
 
 
  
 const Navbar = () => {
-
+    const {setLoggedInUser} = useContext(UserContext)
 
     useLayoutEffect(() => {
         var myText = new SplitType ('.my-text');
@@ -22,6 +24,7 @@ const Navbar = () => {
     const handleClick = () => {
         axios.post('http://localhost:8000/api/logout', {}, {withCredentials: true})
             .then(res => {
+                setLoggedInUser(false)
                 console.log(res.data)
                 navigate('/')
             })
@@ -33,7 +36,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
         <div className="wrapper">
-            <Link to="/">
+            <Link to="/dashboard">
                 <button > Home</button>
             </Link>
             <Link to="/new">

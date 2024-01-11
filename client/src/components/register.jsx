@@ -1,39 +1,43 @@
 import React from 'react'
-import {useState} from 'react'
+import {useState, useContext} from 'react'
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+import UserContext from '../utils/userContext'
+
 
 
 
 const Register = () => {
-    const [user, setUser] = useState({ 
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-      });
+  const {setLoggedInUser} = useContext(UserContext)
+  const [user, setUser] = useState({ 
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    });
 
-      const navigate = useNavigate();
-    
-      const changeHandler = (e) => {
-        setUser({...user, [e.target.name]: e.target.value})
+    const navigate = useNavigate();
+  
+    const changeHandler = (e) => {
+      setUser({...user, [e.target.name]: e.target.value})
+    }
+  
+  
+    const registerHandleSubmit = (e) => {
+      e.preventDefault()
+      axios.post('http://localhost:8000/api/register', user, { withCredentials: true })
+              .then(res=>{
+                  setLoggedInUser(true)
+                  console.log(res.data);
+                  navigate('/dashboard');
+                  
+              })
+              .catch((err) => {
+                  console.log(err)
+                  
+          }); 
       }
-    
-    
-      const registerHandleSubmit = (e) => {
-        e.preventDefault()
-        axios.post('http://localhost:8000/api/register', user, { withCredentials: true })
-                .then(res=>{
-                    console.log(res.data);
-                    navigate('/dashboard');
-                    
-                })
-                .catch((err) => {
-                    console.log(err)
-                    
-            }); 
-        }
   return (
     <div className='flex justify-center align-middle p-[20rem]'>
         <div className="card">

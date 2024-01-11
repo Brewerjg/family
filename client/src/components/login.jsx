@@ -1,12 +1,15 @@
 import React from 'react'
-import {useState} from 'react'
+import {useState, useContext} from 'react'
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+import UserContext from '../utils/userContext'
+
 
 
 
 
 const Login = () => {
+  const {setLoggedInUser} = useContext(UserContext)
   const [user, setUser] = useState({ 
     email: "",
     password: "",
@@ -22,6 +25,8 @@ const Login = () => {
     e.preventDefault()
     axios.post('http://localhost:8000/api/login', user, { withCredentials: true })
             .then(res=>{
+                setLoggedInUser(true)
+                console.log(setLoggedInUser)
                 console.log(res.data);
                 navigate('/dashboard');
                 

@@ -5,7 +5,6 @@ import Cookies from "js-cookie";
 import { useMemo } from "react";
 
 const DisplayImg = () => {
-
   const [image, setImage] = useState([]);
   const [filteredImages, setFilteredImages] = useState([]);
   const navigate = useNavigate();
