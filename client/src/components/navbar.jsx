@@ -42,7 +42,9 @@ const Navbar = () => {
             <Link to="/new">
                 <button >Add Photo</button>
             </Link>
+            <Link to="/">
             <button onClick={handleClick} >Logout</button>
+            </Link>
         </div>
         <div className="head-div h-screen">
 		    <h1 className='head-name my-text font-["Elsie"] text-3xl xl:text-8xl lg:text-8xl md:text-5xl sm:text-3xl '>Grammer | Bhakta</h1>
