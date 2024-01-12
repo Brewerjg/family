@@ -55,7 +55,6 @@ const Login = () => {
                 <label for="password">Password:</label>
                 <input required="" className="form-control" onChange={onchangeHandler} value={user.password} name="password" id="password" type="password"/>
               </div>
-
                   <input type="submit" className="btn" value="submit"/>   
             </form>
             

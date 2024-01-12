@@ -11,6 +11,6 @@ module.exports = (app) => {
     app.delete('/api/delete/:id', ImageController.deleteImage);
     app.post('/api/register', UserController.register);
     app.post('/api/login', UserController.login);
-    app.get('/api/users', authenticate, UserController.getAll);
+    app.get('/api/users', UserController.getAll);
     app.post('/api/logout', authenticate, UserController.logout);
 }
