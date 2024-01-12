@@ -3,6 +3,7 @@ import {useState, useContext} from 'react'
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import UserContext from '../utils/userContext'
+import Logimg from '../assets/logreg.jpg'
 
 
 
@@ -39,7 +40,7 @@ const Login = () => {
 
   return (
     <div className='flex justify-center align-middle p-[20rem]'>
-      
+      <img className='image-bg' src={Logimg} alt="" />
       <div className="card">
           <div className="card-header">
             <div className="text-header">Login</div>
@@ -59,8 +60,8 @@ const Login = () => {
             </form>
             
         </div>
-          <div className="card-footer">
-            <Link className='p-8 ' to="/register">Need to Register? Click here</Link>
+          <div className="card-footer p-2">
+            <Link className='p-8 text-lg text-white ' to="/register">Need to Register? Click here</Link>
           </div>
       </div>
     </div>
