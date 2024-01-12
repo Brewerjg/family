@@ -39,9 +39,9 @@ const Login = () => {
   }
 
   return (
-    <div className='flex justify-center align-middle p-[20rem]'>
+    <div className='flex justify-center align-middle py-[20rem]'>
       <img className='image-bg' src={Logimg} alt="" />
-      <div className="card">
+      <div className="card w-full ">
           <div className="card-header">
             <div className="text-header">Login</div>
           </div>
