@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import Cookies from "js-cookie";
 import { useMemo } from "react";
 
 const DisplayImg = () => {
