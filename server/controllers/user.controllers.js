@@ -54,7 +54,7 @@ module.exports = {
             .catch((err => res.json(err)));
     },
     findOne: (req, res) => {
-        User.findById(req.params.id)
+        User.findById(req.params._id)
             .then(oneUser => res.json(oneUser))
             .catch(err => res.json(err));
     },
