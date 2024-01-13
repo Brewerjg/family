@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useMemo } from "react";
 
 const DisplayImg = () => {
   const [image, setImage] = useState([]);
   const [filteredImages, setFilteredImages] = useState([]);
-  const navigate = useNavigate();
+
 
   useEffect(() => {
       axios.get("http://localhost:8000/api/image")
